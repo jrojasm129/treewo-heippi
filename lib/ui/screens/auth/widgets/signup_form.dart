@@ -89,11 +89,6 @@ class _SignUpFormState extends State<SignUpForm> {
                return 'Please enter at least 5 characters.';
              },
              onChanged: (value) {
-               value = value.trimLeft();
-       
-               _nameController
-               ..text = value
-               ..selection = TextSelection.collapsed(offset: value.length);
                registerFormProvider.name = value.trim();
              },
            ),
@@ -118,12 +113,6 @@ class _SignUpFormState extends State<SignUpForm> {
                return 'Invalid email address format.';                
              },
              onChanged: (value) {
-               value = value.trimLeft();          
-               value = value.toLowerCase(); 
-       
-               _emailController
-               ..text = value
-               ..selection = TextSelection.collapsed(offset: value.length);
                registerFormProvider.email = value.trim();
              },
             ) ,
@@ -143,12 +132,7 @@ class _SignUpFormState extends State<SignUpForm> {
                return 'Please enter at least 6 characters.';
              },
              onChanged: (value) {
-               value = value.trimLeft();
-        
-               _passwordController
-               ..text = value
-               ..selection = TextSelection.collapsed(offset: value.length);
-               registerFormProvider.password = value.trim();
+               registerFormProvider.password = value;
              },
            )
          ],

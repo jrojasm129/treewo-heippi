@@ -92,15 +92,7 @@ class _SignInFormState extends State<SignInForm> {
                   return 'Invalid email address format.';                
                 },
     
-                onChanged: (value) {
-    
-                  value = value.trimLeft();          
-                  value = value.toLowerCase(); 
-          
-                  _emailController
-                  ..text = value
-                  ..selection = TextSelection.collapsed(offset: value.length);
-    
+                onChanged: (value) {  
                   loginFormProvider.email = value.trim();
                 },
               ) ,
@@ -119,15 +111,8 @@ class _SignInFormState extends State<SignInForm> {
                   if( ((value?? '').trim().isNotEmpty) && ((value?? '').trim().length >= 6)) return null;
                   return 'Please enter at least 6 characters.';
                 },
-                onChanged: (value) {
-    
-                  value = value.trimLeft();
-          
-                  _passwordController
-                  ..text = value
-                  ..selection = TextSelection.collapsed(offset: value.length);
-    
-                  loginFormProvider.password = value.trim();
+                onChanged: (value) {    
+                  loginFormProvider.password = value;
                 },
               ),
     

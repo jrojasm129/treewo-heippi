@@ -40,7 +40,6 @@ class _HomeLoadingScreenState extends State<HomeLoadingScreen> with SingleTicker
   Widget build(BuildContext context) {
 
     return Scaffold(
-     backgroundColor: const Color(0xfff1f8e9),
      body:Center(
        child: Column(
          mainAxisAlignment: MainAxisAlignment.center,
